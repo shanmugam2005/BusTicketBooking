@@ -1,0 +1,66 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type srcDest {
+  srcDestId: String!
+  from: String!
+  to: String!
+}
+
+type busInfoType {
+  BusNumber: String!
+  Brand: String!
+  Date: String!
+  srcDestID: ID!
+  routeID: ID!
+}
+
+type routeType {
+  routeID: String!
+  path: [String!]!
+}
+
+type bookTickets {
+  from: String!
+  to: String!
+  clientSecret: String!
+}
+
+type Query {
+  getBusInfo: [busInfoType!]!
+}
+
+type Mutation {
+  addSrcDest(srcDesInput: srcDestInput!): srcDest!
+  addBusInfo(BusInfoInput: busInfoInput!): busInfoType!
+  addRoute(routeInput: routeInput!): routeType!
+  bookTicket(ticketInput: ticketInput!): bookTickets!
+}
+
+input srcDestInput {
+  srcDestId: String!
+  from: String!
+  to: String!
+}
+
+input busInfoInput {
+  BusNumber: String!
+  Brand: String!
+  Date: String!
+  price: Int!
+  seats: Int!
+  srcDestId: String!
+  routeId: String!
+}
+
+input routeInput {
+  routeID: String!
+  path: [String!]!
+}
+
+input ticketInput {
+  email: String!
+  from: String!
+  to: String!
+}

@@ -38,7 +38,7 @@ export class TicketNotificationService {
           service: 'gmail', 
           auth: {
             user: '2212049@nec.edu.in', 
-            pass: 'nahs@12$$' 
+            pass: '' 
           }
         });
     
